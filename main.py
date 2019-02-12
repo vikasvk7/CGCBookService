@@ -20,6 +20,7 @@ def search():
             if(ans == 1):
                 tmsg.showinfo("Success", f"{bsearch1.get()} is Yours!")
                 db.execute("INSERT INTO BORROWED(NAME, PHONE, BOOK) VALUES(?,?,?)",(bname1.get(), bphone1.get(), bsearch1.get()))
+                db.execute("DELETE FROM DONATED WHERE BOOK = ?",(bsearch1.get(),));
                 db.commit()
             else:
                 tmsg.showinfo("Done", "No Problem, Thanks & visit again")
