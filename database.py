@@ -1,4 +1,8 @@
 import sqlite3
+import datetime
+
+print("\nCurrent Time is ",end = "")
+print(datetime.datetime.now())
 
 db = sqlite3.connect("Books.db")
 cursor = db.execute("SELECT * FROM DONATED")
